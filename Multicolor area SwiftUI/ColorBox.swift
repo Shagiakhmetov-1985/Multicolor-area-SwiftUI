@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ColorBox: View {
+    let redColor: CGFloat
+    let greenColor: CGFloat
+    let blueColor: CGFloat
     var body: some View {
-        Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1))
-            .ignoresSafeArea()
+        Color(CGColor(
+                red: redColor / 255,
+                green: greenColor / 255,
+                blue: blueColor / 255,
+                alpha: 1)
+        )
             .frame(width: 340, height: 150)
             .cornerRadius(20)
             .overlay(
@@ -18,11 +25,12 @@ struct ColorBox: View {
                     .stroke(Color.white, lineWidth: 5)
             )
             .shadow(radius: 15)
+            .padding()
     }
 }
 
 struct ColorBox_Previews: PreviewProvider {
     static var previews: some View {
-        ColorBox()
+        ColorBox(redColor: 0, greenColor: 0, blueColor: 0)
     }
 }
