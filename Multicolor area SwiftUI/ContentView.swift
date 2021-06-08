@@ -15,6 +15,7 @@ struct ContentView: View {
     @State private var greenTextField = ""
     @State private var blueTextField = ""
     @State private var alertPresented = false
+    let formatter = NumberFormatter()
     
     var body: some View {
         VStack {
@@ -27,17 +28,17 @@ struct ContentView: View {
             HStack {
                 LabelColor(textValue: String(lround(redValue)))
                 SliderColor(sliderValue: $redValue, colorValue: .red)
-                TextFieldColor(text: $redTextField, isPresented: $alertPresented, value: $redValue)
+                TextFieldColor(text: $redTextField, isPresented: $alertPresented, value: $redValue, formatter: formatter)
             }
             HStack {
                 LabelColor(textValue: String(lround(greenValue)))
                 SliderColor(sliderValue: $greenValue, colorValue: .green)
-                TextFieldColor(text: $greenTextField, isPresented: $alertPresented, value: $greenValue)
+                TextFieldColor(text: $greenTextField, isPresented: $alertPresented, value: $greenValue, formatter: formatter)
             }
             HStack {
                 LabelColor(textValue: String(lround(blueValue)))
                 SliderColor(sliderValue: $blueValue, colorValue: .blue)
-                TextFieldColor(text: $blueTextField, isPresented: $alertPresented, value: $blueValue)
+                TextFieldColor(text: $blueTextField, isPresented: $alertPresented, value: $blueValue, formatter: formatter)
             }
             Spacer()
         }
@@ -74,30 +75,30 @@ struct TextFieldColor: View {
     @Binding var text: String
     @Binding var isPresented: Bool
     @Binding var value: Double
+    var formatter: NumberFormatter
     var body: some View {
-        TextField("", text: $text, onCommit: {
-            checkValue()
-        })
-        .alert(isPresented: $isPresented) {
-            Alert(title: Text("Wrong Format!"), message: Text("Please enter value from 0 to 255"))
-        }
-        .frame(width: 60, height: 40)
-        .font(.system(size: 25))
-        .textFieldStyle(RoundedBorderTextFieldStyle())
-        .multilineTextAlignment(.trailing)
-        .overlay(RoundedRectangle(cornerRadius: 9)
-                    .stroke(lineWidth: 3)
-                    .foregroundColor(.black)
-        )
-        .shadow(radius: 7)
+            TextField("", value: $value, formatter: formatter, onCommit: {
+                checkValue()
+            })
+            .alert(isPresented: $isPresented) {
+                Alert(title: Text("Wrong Format!"), message: Text("Please enter value from 0 to 255"))
+            }
+            .frame(width: 60, height: 40)
+            .font(.system(size: 25))
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .multilineTextAlignment(.trailing)
+            .overlay(RoundedRectangle(cornerRadius: 9)
+                        .stroke(lineWidth: 3)
+                        .foregroundColor(.black)
+            )
+            .shadow(radius: 7)
     }
     
     private func checkValue() {
-        if let _ = Int(text) {
+        if let newValue = Int(text) {
+            value = Double(newValue)
         } else {
             isPresented.toggle()
-            value = Double(text) ?? 0
-            print(value)
         }
     }
 }
