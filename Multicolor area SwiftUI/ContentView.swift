@@ -95,10 +95,14 @@ struct TextFieldColor: View {
     }
     
     private func checkValue() {
-        if let newValue = Int(text) {
-            value = Double(newValue)
-        } else {
+//        if value == Double(value) {
+//            print("текст содержит только числа")
+//        } else {
+//            print("текст содержит любые символы")
+//        }
+        if !(value > 0 && value < 256) {
             isPresented.toggle()
+            value = Double.random(in: 0...255)
         }
     }
 }
