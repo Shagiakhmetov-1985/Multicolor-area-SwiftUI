@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3363F732670A483009433C1 /* LabelColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3363F722670A483009433C1 /* LabelColor.swift */; };
+		C3363F752670A621009433C1 /* TextFieldColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3363F742670A621009433C1 /* TextFieldColor.swift */; };
+		C3363F772670AD5B009433C1 /* SliderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3363F762670AD5B009433C1 /* SliderColor.swift */; };
 		C34ED6BD266BFE1500501994 /* Multicolor_area_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34ED6BC266BFE1500501994 /* Multicolor_area_SwiftUIApp.swift */; };
 		C34ED6BF266BFE1500501994 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34ED6BE266BFE1500501994 /* ContentView.swift */; };
 		C34ED6C1266BFE1500501994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34ED6C0266BFE1500501994 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C3363F722670A483009433C1 /* LabelColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelColor.swift; sourceTree = "<group>"; };
+		C3363F742670A621009433C1 /* TextFieldColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldColor.swift; sourceTree = "<group>"; };
+		C3363F762670AD5B009433C1 /* SliderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderColor.swift; sourceTree = "<group>"; };
 		C34ED6B9266BFE1500501994 /* Multicolor area SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multicolor area SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34ED6BC266BFE1500501994 /* Multicolor_area_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multicolor_area_SwiftUIApp.swift; sourceTree = "<group>"; };
 		C34ED6BE266BFE1500501994 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +62,9 @@
 			children = (
 				C34ED6BC266BFE1500501994 /* Multicolor_area_SwiftUIApp.swift */,
 				C34ED6BE266BFE1500501994 /* ContentView.swift */,
+				C3363F762670AD5B009433C1 /* SliderColor.swift */,
+				C3363F742670A621009433C1 /* TextFieldColor.swift */,
+				C3363F722670A483009433C1 /* LabelColor.swift */,
 				C34ED6CB266BFEB800501994 /* ColorBox.swift */,
 				C34ED6C0266BFE1500501994 /* Assets.xcassets */,
 				C34ED6C5266BFE1500501994 /* Info.plist */,
@@ -142,8 +151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C34ED6CC266BFEB800501994 /* ColorBox.swift in Sources */,
+				C3363F752670A621009433C1 /* TextFieldColor.swift in Sources */,
+				C3363F772670AD5B009433C1 /* SliderColor.swift in Sources */,
 				C34ED6BF266BFE1500501994 /* ContentView.swift in Sources */,
 				C34ED6BD266BFE1500501994 /* Multicolor_area_SwiftUIApp.swift in Sources */,
+				C3363F732670A483009433C1 /* LabelColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

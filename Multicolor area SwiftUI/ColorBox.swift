@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ColorBox: View {
-    let redColor: CGFloat
-    let greenColor: CGFloat
-    let blueColor: CGFloat
+    let redColor: Double
+    let greenColor: Double
+    let blueColor: Double
     var body: some View {
-        Color(CGColor(
-                red: redColor / 255,
-                green: greenColor / 255,
-                blue: blueColor / 255,
-                alpha: 1)
+        Color(
+            red: redColor / 255,
+            green: greenColor / 255,
+            blue: blueColor / 255
         )
             .frame(width: 340, height: 150)
             .cornerRadius(20)
